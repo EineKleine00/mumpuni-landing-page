@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>Portofolio Proyek - PT Mumpuni | Kontraktor Jalan, Jembatan & Pengairan</title>
+    <meta name="description" content="Jelajahi galeri portofolio proyek PT Mumpuni dalam pembangunan dan pemeliharaan jalan tol, jembatan beton, sistem drainase, jaringan irigasi, serta perumahan dan pemukiman.">
+    <meta name="keywords" content="portofolio proyek PT Mumpuni, proyek jalan dan jembatan, pembangunan drainase, jaringan pengairan irigasi, perumahan dan pemukiman, proyek teknik sipil indonesia">
+    <link rel="canonical" href="https://www.ptmumpuni.co.id/portfolio.html">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.ptmumpuni.co.id/portfolio.html">
+    <meta property="og:title" content="Portofolio Proyek - PT Mumpuni | Kontraktor Infrastruktur & Sipil">
+    <meta property="og:description" content="Dokumentasi komprehensif pengerjaan proyek infrastruktur jalan, jembatan, pengairan, dan perumahan oleh PT Mumpuni.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1541888946425-d0fbb18f1947?q=80&w=1200&auto=format&fit=crop">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#C5A880',
+                            dark: '#1C1917',
+                            gray: '#78716C',
+                            light: '#FAFAF9',
+                            card: '#262626'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-dark text-stone-200 font-sans antialiased">
+
+    <!-- HEADER / NAVIGASI -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-brand-dark/90 backdrop-blur-md border-b border-stone-800 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-2 text-2xl font-serif font-bold text-white tracking-wide">
+                <span class="text-brand-gold">PT MUMPUNI</span>
+            </a>
+
+            <!-- Navigasi Desktop -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-stone-300 tracking-wider">
+                <a href="index.html" class="hover:text-brand-gold transition-colors">BERANDA</a>
+                <a href="about.html" class="hover:text-brand-gold transition-colors">TENTANG KAMI</a>
+                <a href="services.html" class="hover:text-brand-gold transition-colors">LAYANAN</a>
+                <a href="portfolio.html" class="text-brand-gold transition-colors">PROYEK</a>
+                <a href="contact.html" class="hover:text-brand-gold transition-colors">KONTAK</a>
+            </nav>
+
+            <!-- Tombol Menu Mobile -->
+            <button id="mobile-menu-btn" aria-label="Buka Menu Navigasi" class="md:hidden text-stone-300 hover:text-white focus:outline-none">
+                <i data-lucide="menu" class="w-7 h-7"></i>
+            </button>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-stone-900 border-b border-stone-800 px-6 py-6 space-y-4">
+            <a href="index.html" class="block text-stone-300 hover:text-brand-gold font-medium">BERANDA</a>
+            <a href="about.html" class="block text-stone-300 hover:text-brand-gold font-medium">TENTANG KAMI</a>
+            <a href="services.html" class="block text-brand-gold font-medium">LAYANAN</a>
+            <a href="portfolio.html" class="block text-stone-300 hover:text-brand-gold font-medium">PROYEK</a>
+            <a href="contact.html" class="block text-stone-300 hover:text-brand-gold font-medium">KONTAK</a>
+        </div>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <section class="relative pt-36 pb-16 bg-stone-900 border-b border-stone-800">
+        <div class="max-w-7xl mx-auto px-6 text-center space-y-4">
+            <p class="text-brand-gold font-medium uppercase tracking-[0.2em] text-xs">Rekam Jejak Konstruksi</p>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif text-white">Portofolio Proyek</h1>
+            <p class="text-stone-400 text-sm md:text-base max-w-2xl mx-auto font-light leading-relaxed">
+                Jelajahi setiap pengerjaan proyek infrastruktur dan teknik sipil kami secara mendalam melalui galeri dokumentasi dan spesifikasi teknis di bawah ini.
+            </p>
+        </div>
+    </section>
+
+    <!-- SECTION PORTOFOLIO -->
+    <section class="py-16 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-6 space-y-24">
+
+            <!-- Tombol Filter Kategori -->
+            <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-8 text-xs md:text-sm uppercase tracking-wider font-medium" id="filter-buttons">
+                <button data-filter="all" class="filter-btn active px-6 py-2.5 border border-brand-gold bg-brand-gold text-brand-dark transition-all duration-300">
+                    Semua Proyek
+                </button>
+                <button data-filter="jalan-jembatan" class="filter-btn px-6 py-2.5 border border-stone-800 text-stone-400 hover:border-brand-gold hover:text-white transition-all duration-300">
+                    Jalan & Jembatan
+                </button>
+                <button data-filter="drainase-pengairan" class="filter-btn px-6 py-2.5 border border-stone-800 text-stone-400 hover:border-brand-gold hover:text-white transition-all duration-300">
+                    Drainase & Irigasi
+                </button>
+                <button data-filter="perumahan" class="filter-btn px-6 py-2.5 border border-stone-800 text-stone-400 hover:border-brand-gold hover:text-white transition-all duration-300">
+                    Perumahan & Pemukiman
+                </button>
+            </div>
+
+            <!-- PROYEK 1 CONTAINER: JALAN & JEMBATAN -->
+            <div class="portfolio-item w-full bg-stone-900 border border-stone-800 shadow-2xl overflow-hidden pt-16 md:pt-20 relative" data-category="jalan-jembatan">
+                
+                <!-- Header Atas Container -->
+                <div class="absolute top-6 left-6 md:left-10 right-6 md:right-10 flex flex-col md:flex-row md:items-end justify-between gap-4 pointer-events-none z-10">
+                    <div>
+                        <h2 class="text-3xl md:text-5xl lg:text-7xl font-serif font-bold text-white/5 tracking-tight uppercase leading-none">
+                            Pembangunan Kawasan Al azhar International Islamic Boarding School
+                        </h2>
+                    </div>
+                    <span class="text-xs text-stone-500 uppercase tracking-widest font-medium hidden md:block">Karanganyar, Jawa Tengah — 2024</span>
+                </div>
+
+                <!-- Grid 6 Bagian -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-0 relative z-20">
+                    
+                    <!-- Bagian 1: Kiri Atas (Nama & Ringkasan Proyek) -->
+                    <div class="bg-transparent border border-stone-800/60 p-6 md:p-8 flex flex-col justify-between aspect-[4/3] w-full">
+                        <div>
+                            <span class="text-brand-gold text-xs uppercase tracking-widest font-semibold block mb-2">Gedung dan Perumahan</span>
+                            <h3 class="text-2xl lg:text-3xl font-serif text-white mb-3">Pembangunan Gedung Asrama dan kawasan sekolah</h3>
+                            <p class="text-stone-400 text-xs md:text-sm leading-relaxed font-light">
+                                Pembangunan Gedung Asrama putra dan putri siswa, pembangunan fasilitas lapangan basket, masjid dan perumahan tempat tinggal pengajar.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Bagian 2: Foto Proyek 1 -->
+                    <div class="relative overflow-hidden bg-stone-800 border border-stone-800/60 aspect-[4/3] w-full group">
+                        <img src="img/project1a.jpg" 
+                             alt="Asrama Siswa" 
+                             loading="lazy"
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+
+                    <!-- Bagian 3: Foto Proyek 2 -->
+                    <div class="relative overflow-hidden bg-stone-800 border border-stone-800/60 aspect-[4/3] w-full group">
+                        <img src="img/project1b.jpg" 
+                             alt="Ruang Kelas" 
+                             loading="lazy"
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+
+                    <!-- Bagian 4: Foto Proyek 3 -->
+                    <div class="relative overflow-hidden bg-stone-800 border border-stone-800/60 aspect-[4/3] w-full group">
+                        <img src="img/project1c.jpg" 
+                             alt="Komplek Perumahan Pengajar" 
+                             loading="lazy"
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+
+                    <!-- Bagian 5: Foto Proyek 4 -->
+                    <div class="relative overflow-hidden bg-stone-800 border border-stone-800/60 aspect-[4/3] w-full group">
+                        <img src="img/project1d.jpg" 
+                             alt="hasil akhir" 
+                             loading="lazy"
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+
+                    <!-- Bagian 6: Foto Proyek 5 -->
+                    <div class="relative overflow-hidden bg-stone-800 border border-stone-800/60 aspect-[4/3] w-full group">
+                        <img src="img/project1e.jpg" 
+                             alt="Hasil Akhir" 
+                             loading="lazy"
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- PROYEK 2 CONTAINER: DRAINASE & PENGAIRAN -->
+            <div class="portfolio-item w-full bg-stone-900 border border-stone-800 shadow-2xl overflow-hidden pt-16 md:pt-20 relative" data-category="drainase-pengairan">
+                
+                <!-- Header Atas Container -->
+                <div class="absolute top-6 left-6 md:left-10 right-6 md:right-10 flex flex-col md:flex-row md:items-end justify-between gap-4 pointer-events-none z-10">
+                    <div>
+                        <h2 class="text-3xl md:text-5xl lg:text-7xl font-serif font-bold text-white/5 tracking-tight uppercase leading-none">
+                            Drainase & Irigasi
+                        </h2>
+                    </div>
+                    <span class="text-xs text-stone-500 uppercase tracking-widest font-medium hidden md:block">Jawa Tengah, Indonesia — 2026</span>
+                </div>
+
+                <!-- Grid 6 Bagian -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-0 relative z-20">
+                    
+                    <!-- Bagian 1: Kiri Atas (Nama & Ringkasan Proyek) -->
+                    <div class="bg-transparent border border-stone-800/60 p-6 md:p-8 flex flex-col justify-between aspect-[4/3] w-full">
+                        <div>
+                            <span class="text-brand-gold text-xs uppercase tracking-widest font-semibold block mb-2">Drainase & Irigasi</span>
+                            <h3 class="text-2xl lg:text-3xl font-serif text-white mb-3">Sistem Drainase & Jaringan Irigasi Teknis</h3>
+                            <p class="text-stone-400 text-xs md:text-sm leading-relaxed font-light">
+                                Normalisasi saluran air perkotaan, pembangunan gorong-gorong pracetak, dan konstruksi jaringan pengairan pertanian terpadu.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Bagian 2: Foto Proyek 1 -->
+                    <div class="relative overflow-hidden bg-stone-800 border border-stone-800/60 aspect-[4/3] w-full group">
+                        <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?q=80&w=800&auto=format&fit=crop" 
+                             alt="Konstruksi dinding penahan tanah dan saluran irigasi oleh PT Mumpuni" 
+                             loading="lazy"
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+
+                    <!-- Bagian 3: Foto Proyek 2 -->
+                    <div class="relative overflow-hidden bg-stone-800 border border-stone-800/60 aspect-[4/3] w-full group">
+                        <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=800&auto=format&fit=crop" 
+                             alt="Pemasangan struktur drainase beton pracetak U-Ditch oleh PT Mumpuni" 
+                             loading="lazy"
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+
+                    <!-- Bagian 4: Foto Proyek 3 -->
+                    <div class="relative overflow-hidden bg-stone-800 border border-stone-800/60 aspect-[4/3] w-full group">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800&auto=format&fit=crop" 
+                             alt="Pekerjaan pengerukan dan normalisasi jaringan pengairan sungai oleh PT Mumpuni" 
+                             loading="lazy"
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+
+                    <!-- Bagian 5: Foto Proyek 4 -->
+                    <div class="relative overflow-hidden bg-stone-800 border border-stone-800/60 aspect-[4/3] w-full group">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=800&auto=format&fit=crop" 
+                             alt="Pengujian aliran air dan kontrol debit sistem pengairan oleh PT Mumpuni" 
+                             loading="lazy"
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+
+                    <!-- Bagian 6: Foto Proyek 5 -->
+                    <div class="relative overflow-hidden bg-stone-800 border border-stone-800/60 aspect-[4/3] w-full group">
+                        <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=800&auto=format&fit=crop" 
+                             alt="Hasil fisik jaringan irigasi pengendali banjir perkotaan pengerjaan PT Mumpuni" 
+                             loading="lazy"
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- PROYEK 3 CONTAINER: PERUMAHAN & PEMUKIMAN -->
+            <div class="portfolio-item w-full bg-stone-900 border border-stone-800 shadow-2xl overflow-hidden pt-16 md:pt-20 relative" data-category="perumahan">
+                
+                <!-- Header Atas Container -->
+                <div class="absolute top-6 left-6 md:left-10 right-6 md:right-10 flex flex-col md:flex-row md:items-end justify-between gap-4 pointer-events-none z-10">
+                    <div>
+                        <h2 class="text-3xl md:text-5xl lg:text-7xl font-serif font-bold text-white/5 tracking-tight uppercase leading-none">
+                            Perumahan Terpadu
+                        </h2>
+                    </div>
+                    <span class="text-xs text-stone-500 uppercase tracking-widest font-medium hidden md:block">Banten, Indonesia — 2026</span>
+                </div>
+
+                <!-- Grid 6 Bagian -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-0 relative z-20">
+                    
+                    <!-- Bagian 1: Kiri Atas (Nama & Ringkasan Proyek) -->
+                    <div class="bg-transparent border border-stone-800/60 p-6 md:p-8 flex flex-col justify-between aspect-[4/3] w-full">
+                        <div>
+                            <span class="text-brand-gold text-xs uppercase tracking-widest font-semibold block mb-2">Perumahan & Pemukiman</span>
+                            <h3 class="text-2xl lg:text-3xl font-serif text-white mb-3">Pengembangan Kawasan Pemukiman Terpadu</h3>
+                            <p class="text-stone-400 text-xs md:text-sm leading-relaxed font-light">
+                                Pembangunan unit perumahan, perataan lahan (land clearing), penataan jalan lingkungan, serta fasilitas umum dan utilitas bawah tanah.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Bagian 2: Foto Proyek 1 -->
+                    <div class="relative overflow-hidden bg-stone-800 border border-stone-800/60 aspect-[4/3] w-full group">
+                        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800&auto=format&fit=crop" 
+                             alt="Pembangunan klaster perumahan modern oleh PT Mumpuni" 
+                             loading="lazy"
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+
+                    <!-- Bagian 3: Foto Proyek 2 -->
+                    <div class="relative overflow-hidden bg-stone-800 border border-stone-800/60 aspect-[4/3] w-full group">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" 
+                             alt="Pekerjaan finishing struktur bangunan perumahan oleh PT Mumpuni" 
+                             loading="lazy"
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+
+                    <!-- Bagian 4: Foto Proyek 3 -->
+                    <div class="relative overflow-hidden bg-stone-800 border border-stone-800/60 aspect-[4/3] w-full group">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop" 
+                             alt="Penataan fasad dan jalan lingkungan perumahan oleh PT Mumpuni" 
+                             loading="lazy"
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+
+                    <!-- Bagian 5: Foto Proyek 4 -->
+                    <div class="relative overflow-hidden bg-stone-800 border border-stone-800/60 aspect-[4/3] w-full group">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop" 
+                             alt="Pembangunan sarana umum dan ruang terbuka hijau kawasan pemukiman PT Mumpuni" 
+                             loading="lazy"
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+
+                    <!-- Bagian 6: Foto Proyek 5 -->
+                    <div class="relative overflow-hidden bg-stone-800 border border-stone-800/60 aspect-[4/3] w-full group">
+                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=800&auto=format&fit=crop" 
+                             alt="Tampak kawasan pemukiman terpadu siap huni garapan PT Mumpuni" 
+                             loading="lazy"
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- BANNER CALL TO ACTION -->
+    <section class="py-20 relative overflow-hidden bg-brand-gold">
+        <div class="max-w-7xl mx-auto px-6 text-center text-brand-dark relative z-10 space-y-6">
+            <h2 class="text-3xl md:text-5xl font-serif font-medium">Siap Memulai Proyek Konstruksi Bersama Kami?</h2>
+            <p class="text-stone-800 text-base max-w-xl mx-auto font-medium">
+                Diskusikan rencana anggaran dan spesifikasi teknis proyek Anda dengan tim insinyur berpengalaman PT Mumpuni.
+            </p>
+            <div>
+                <a href="contact.html" class="inline-block bg-brand-dark text-white font-semibold px-8 py-4 uppercase text-xs tracking-widest hover:bg-black transition-colors duration-300">
+                    Hubungi Tim Kami
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-stone-400 py-16 border-t border-stone-900 text-sm">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
+            <!-- Informasi Brand -->
+            <div class="space-y-4">
+                <a href="index.html" class="text-2xl font-serif font-bold text-white tracking-wide block">
+                    <span class="text-brand-gold">PT MUMPUNI</span>
+                </a>
+                <p class="text-xs text-stone-500 leading-relaxed">
+                    Kontraktor umum terpercaya dalam pembangunan dan pemeliharaan jalan, jembatan, drainase, jaringan pengairan, serta perumahan dan pemukiman.
+                </p>
+            </div>
+
+            <!-- Tautan Cepat -->
+            <div class="space-y-3">
+                <h4 class="text-white font-serif font-medium text-base mb-2">Navigasi</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="index.html" class="hover:text-brand-gold transition-colors">Beranda</a></li>
+                    <li><a href="about.html" class="hover:text-brand-gold transition-colors">Tentang Kami</a></li>
+                    <li><a href="services.html" class="hover:text-brand-gold transition-colors">Layanan</a></li>
+                    <li><a href="project.html" class="hover:text-brand-gold transition-colors">Proyek</a></li>
+                    <li><a href="contact.html" class="hover:text-brand-gold transition-colors">Kontak</a></li>
+                </ul>
+            </div>
+
+            <!-- Informasi Kontak -->
+            <div class="space-y-3">
+                <h4 class="text-white font-serif font-medium text-base mb-2">Kontak Kami</h4>
+                <p class="text-xs text-stone-400">CPWX+W94, Dusun III, Singopuran, Kec. Kartasura<br> Kabupaten Sukoharjo, Jawa Tengah 57164</p>
+                <p class="text-xs text-stone-400">Telepon: +62 (21) 555-0192</p>
+                <p class="text-xs text-stone-400">Email: info@ptmumpuni.co.id</p>
+            </div>
+
+            <!-- Jam Operasional -->
+            <div class="space-y-3">
+                <h4 class="text-white font-serif font-medium text-base mb-2">Jam Kerja</h4>
+                <p class="text-xs text-stone-400">Senin - Jumat: 08:00 - 17:00</p>
+                <p class="text-xs text-stone-400">Sabtu: 08:00 - 14:00</p>
+                <p class="text-xs text-stone-400">Minggu: Tutup</p>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 mt-12 pt-6 border-t border-stone-900 text-xs text-stone-600 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p>&copy; 2026 PT Mumpuni. Hak Cipta Dilindungi.</p>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-stone-400">Kebijakan Privasi</a>
+                <a href="#" class="hover:text-stone-400">Syarat & Ketentuan</a>
+            </div>
+        </div>
+    </footer>
+    <!-- JAVASCRIPT -->
+    <script>
+        // Inisialisasi Ikon Lucide
+        lucide.createIcons();
+
+        // Toggle Menu Mobile
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Filter Portofolio Interaktif
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-brand-gold', 'text-brand-dark', 'border-brand-gold');
+                    b.classList.add('text-stone-400', 'border-stone-800');
+                });
+                btn.classList.remove('text-stone-400', 'border-stone-800');
+                btn.classList.add('bg-brand-gold', 'text-brand-dark', 'border-brand-gold');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                portfolioItems.forEach(item => {
+                    const category = item.getAttribute('data-category');
+                    if (filterValue === 'all' || filterValue === category) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
