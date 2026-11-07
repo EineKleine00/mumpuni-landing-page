@@ -173,18 +173,18 @@
                         Terima kasih! Pesan Anda telah berhasil terkirim. Tim teknis PT Mumpuni akan segera menghubungi Anda.
                     </div>
 
-                    <form id="contact-form" class="space-y-6">
+                    <form id="contact-form" class="space-y-6" action="https://formspree.io/f/meaawapr" method="POST">
                         <div class="grid md:grid-cols-2 gap-6">
                             <!-- Nama Lengkap / Perusahaan -->
                             <div class="space-y-2">
                                 <label for="name" class="block text-xs uppercase tracking-wider text-stone-300 font-medium">Nama Lengkap / Instansi *</label>
-                                <input type="text" id="name" required placeholder="Masukkan nama atau instansi" class="w-full bg-brand-dark border border-stone-800 px-4 py-3 text-sm text-white placeholder-stone-600 focus:outline-none focus:border-brand-gold transition-colors">
+                                <input type="text" id="name" name="name "required placeholder="Masukkan nama atau instansi" class="w-full bg-brand-dark border border-stone-800 px-4 py-3 text-sm text-white placeholder-stone-600 focus:outline-none focus:border-brand-gold transition-colors">
                             </div>
 
                             <!-- Email -->
                             <div class="space-y-2">
                                 <label for="email" class="block text-xs uppercase tracking-wider text-stone-300 font-medium">Alamat Email Resmi *</label>
-                                <input type="email" id="email" required placeholder="nama@perusahaan.com" class="w-full bg-brand-dark border border-stone-800 px-4 py-3 text-sm text-white placeholder-stone-600 focus:outline-none focus:border-brand-gold transition-colors">
+                                <input type="email" name="email" id="email" required placeholder="nama@perusahaan.com" class="w-full bg-brand-dark border border-stone-800 px-4 py-3 text-sm text-white placeholder-stone-600 focus:outline-none focus:border-brand-gold transition-colors">
                             </div>
                         </div>
 
@@ -192,13 +192,13 @@
                             <!-- Nomor Telepon -->
                             <div class="space-y-2">
                                 <label for="phone" class="block text-xs uppercase tracking-wider text-stone-300 font-medium">Nomor Telepon / WA *</label>
-                                <input type="tel" id="phone" required placeholder="+62 812..." class="w-full bg-brand-dark border border-stone-800 px-4 py-3 text-sm text-white placeholder-stone-600 focus:outline-none focus:border-brand-gold transition-colors">
+                                <input type="tel" name="phone" id="phone" required placeholder="+62 812..." class="w-full bg-brand-dark border border-stone-800 px-4 py-3 text-sm text-white placeholder-stone-600 focus:outline-none focus:border-brand-gold transition-colors">
                             </div>
 
                             <!-- Jenis Layanan Infrastruktur -->
                             <div class="space-y-2">
                                 <label for="project-type" class="block text-xs uppercase tracking-wider text-stone-300 font-medium">Bidang Pekerjaan *</label>
-                                <select id="project-type" required class="w-full bg-brand-dark border border-stone-800 px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold transition-colors">
+                                <select id="project-type" name="project-type" required class="w-full bg-brand-dark border border-stone-800 px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-gold transition-colors">
                                     <option value="" disabled selected class="text-stone-600">Pilih Bidang Pekerjaan</option>
                                     <option value="jalan-jembatan">Pembangunan & Pemeliharaan Jalan / Jembatan</option>
                                     <option value="drainase-pengairan">Drainase & Jaringan Pengairan / Irigasi</option>
@@ -216,7 +216,7 @@
 
                         <!-- Tombol Submit -->
                         <div>
-                            <button type="submit" class="w-full sm:w-auto bg-brand-gold hover:bg-[#b3956d] text-brand-dark font-semibold px-8 py-4 text-xs uppercase tracking-widest transition-all duration-300">
+                            <button type="submit" id="submit-btn" class="w-full sm:w-auto bg-brand-gold hover:bg-[#b3956d] text-brand-dark font-semibold px-8 py-4 text-xs uppercase tracking-widest transition-all duration-300">
                                 Kirim Pesan Konsultasi
                             </button>
                         </div>
@@ -316,19 +316,48 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Simulasi Submit Form Kontak
+        // Integrasi Formspree Submit dengan AJAX
         const contactForm = document.getElementById('contact-form');
         const successAlert = document.getElementById('success-alert');
+        const submitBtn = document.getElementById('submit-btn');
+        
+        contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        // Ubah teks tombol saat mengirim
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Mengirim...';
+        submitBtn.disabled = true;
 
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            successAlert.classList.remove('hidden');
-            contactForm.reset();
-            window.scrollTo({
-                top: contactForm.offsetTop - 150,
-                behavior: 'smooth'
+        const formData = new FormData(contactForm);
+
+        try {
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
             });
-        });
+
+            if (response.ok) {
+                successAlert.classList.remove('hidden');
+                contactForm.reset();
+                window.scrollTo({
+                    top: contactForm.offsetTop - 150,
+                    behavior: 'smooth'
+                });
+            } else {
+                const data = await response.json();
+                alert(data.error || 'Terjadi kesalahan saat mengirim pesan. Silakan coba lagi.');
+            }
+        } catch (error) {
+            alert('Gagal terhubung ke server. Periksa koneksi internet Anda.');
+        } finally {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }
+    });
     </script>
 </body>
 </html>
